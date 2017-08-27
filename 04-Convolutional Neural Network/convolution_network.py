@@ -125,7 +125,7 @@ for epoch in range(num_epoches):
         loss = criterion(out, label)
         eval_loss += loss.data[0] * label.size(0)
         _, pred = torch.max(out, 1)
-        num_correct = (pred == label).sum().float
+        num_correct = (pred == label).sum().float()
         eval_acc += num_correct.data[0]
     print('Test Loss: {:.6f}, Acc: {:.6f}'.format(eval_loss / (len(
         test_dataset)), eval_acc / (len(test_dataset))))
